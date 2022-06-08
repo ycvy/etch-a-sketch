@@ -9,5 +9,11 @@ function makeRows(rows, cols) {
     container.appendChild(cell).className = "grid-item";
   };
 };
+container.addEventListener("mouseover", function(e) {
+  e.target.style.backgroundColor = "red";
+  setTimeout(function() {
+    e.target.style.backgroundColor = "";
+  }, 300);
+}, false);
 
 makeRows(16, 16);
