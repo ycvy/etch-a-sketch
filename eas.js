@@ -15,8 +15,8 @@ btn.addEventListener("click", function(e) {
 const container = document.getElementById("container");
 
 function makeRows(_canvasSize) {
-  const rows = canvasSize;
-  const cols = canvasSize;
+  const rows = _canvasSize;
+  const cols = _canvasSize;
   container.style.setProperty('--grid-rows', rows);
   container.style.setProperty('--grid-cols', cols);
   for (c = 0; c < (rows * cols); c++) {
@@ -25,8 +25,10 @@ function makeRows(_canvasSize) {
     container.appendChild(cell).className = "grid-item";
     cell.addEventListener("mouseover", function(e) {
       e.target.style.backgroundColor = "white";
+      e.target.style.color = "black";
       setTimeout(function() {
         e.target.style.backgroundColor = "";
+        e.target.style.color = "";
       }, 300);
     }, false);
   };
